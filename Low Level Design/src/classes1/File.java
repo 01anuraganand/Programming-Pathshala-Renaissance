@@ -7,15 +7,21 @@ public class File {
     private double size = 0;
     private Date dateOfCreation;
     private String content;
+    private static  int count = 0; // initialize during class loading step(i.e before instance invoked)
 
     public File(String absolutePath){
         this.absolutePath = absolutePath;
         this.size = 0;
         this.dateOfCreation = new Date();
         this.content = "";
+        this.count++;
     }
 
+    public static int getCount(){
+        return count;
+    }
     public String getAbsolutePath(){
+        int x = count; // Accessing of static member is allowed in non-static method, but not vice-versa
         return this.absolutePath;
     }
 
