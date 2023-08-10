@@ -13,5 +13,10 @@ public class FileTester {
         mySecondFile.addContent("I am new to Java Programming.");
         myFile.copy("/Desktop/copy.txt");
         mySecondFile.copy("/Desktop/copy.txt");
+
+        // Static
+        // Invoking of not-static data and methods from static method is not allowed.
+        System.out.println(File.getCount());
+        System.out.println(myFile.getCount()); // not good to create through object instance
     }
 }
